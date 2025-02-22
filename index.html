@@ -1,88 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wirattawut (Max) Boonbandansook</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background: #007acc;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #007acc;
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem 0;
-            background: #f4f4f9;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Wirattawut (Max) Boonbandansook</h1>
-        <p>Computer Science M.Sc. Candidate @Brown University</p>
-        <p>Email: maxboonban <span style="font-style: italic;">"at"</span> brown <span style="font-style: italic;">"dot"</span> edu</p>
-    </header>
-    <div class="container">
-        <h2>About Me</h2>
-        <img src="max.jpg" alt="Image of Max" style="width: 150px; height: auto; margin-top: 1rem; border-radius: 8px;">
-        <p>Hi everyone! I’m Max, a Master’s student in Computer Science at Brown University. Originally from Thailand, I moved to the U.S. to earn my undergraduate degree in Industrial and Systems Engineering at Georgia Tech. There, I found my passion for electric vehicles as a member of the student Formula Electric racing team, <strong>HyTech Racing</strong>.</p>
-        <p>During the Covid-19 pandemic, I took a year away from school to work hands-on in a battery research lab with <strong>Dr. Pimpa Limthongkul</strong>, deepening my expertise in the energy sector.</p>
-        <p>Back at school, I expanded my knowledge into the transportation sector, joining the <strong>AI Institute for Advances in Optimization (AI4OPT)</strong>. Under <strong>Dr. Pascal van Hentenryck’s</strong> guidance, I helped design autonomous transfer hub networks for trucks, further solidifying my drive to innovate in transportation.</p>
-        <p>I’m eager to keep advancing my skills and take on new, exciting frontiers in this field!</p>
-    </div>
-
-    <div class="container">
-        <h2>Publications</h2>
-        <p><strong>Constraint Programming to Improve Hub Utilization in Autonomous Transfer Hub Networks</strong></p>
-        <p>Chungjae Lee, Wirattawut Boonbandansook, Vahid Eghbal Akhlaghi, Kevin Dalmeijer, Pascal Van Hentenryck</p>
-        <p><em>*Joint first author</em></p>
-    </div>
-
-    <div class="container">
-        <h2>Education</h2>
-        <p><strong>Brown University</strong></p>
-        <p>M.Sc. Student, 2024 - Current</p>
-        <p><strong>Georgia Institute of Technology</strong></p>
-        <p>Highest Honors, B.Sc., 2018 - 2023</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Wirattawut (Max) Boonbandansook</p>
-    </footer>
-</body>
-</html>
- -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -97,12 +13,14 @@
             background-color: #f4f4f9;
             color: #333;
         }
+
         header {
             background: #007acc;
             color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             text-align: center;
         }
+
         .profile-img {
             width: 120px;
             height: 120px;
@@ -112,49 +30,98 @@
             border: 3px solid white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         nav {
             background: #005f99;
             padding: 0.5rem 0;
             text-align: center;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center;
         }
+
         nav ul li {
-            display: inline;
             margin: 0 15px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 2rem auto;
-            padding: 1rem;
+            padding: 1.5rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         h1, h2 {
             color: #007acc;
         }
+
         a {
             color: #007acc;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
+        .portfolio-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .portfolio-item {
+            background: #eef3f7;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item a {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
         footer {
             text-align: center;
             margin-top: 2rem;
             padding: 1rem 0;
             background: #f4f4f9;
             color: #666;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .portfolio-item {
+                width: 90%;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
@@ -183,20 +150,19 @@
             There, I found my passion for electric vehicles as a member of the student Formula Electric racing team, 
             <strong>HyTech Racing</strong>.
         </p>
-        <p>During the Covid-19 pandemic, I took a year away from school to work hands-on in a battery research lab with 
-            <strong>Dr. Pimpa Limthongkul</strong>, deepening my expertise in the energy sector.</p>
-        <p>Back at school, I expanded my knowledge into the transportation sector, joining the 
-            <strong>AI Institute for Advances in Optimization (AI4OPT)</strong>. Under <strong>Dr. Pascal van Hentenryck’s</strong> 
-            guidance, I helped design autonomous transfer hub networks for trucks, further solidifying my drive to innovate 
-            in transportation.</p>
-        <p>I’m eager to keep advancing my skills and take on new, exciting frontiers in this field!</p>
     </div>
 
-    <!-- Portfolio Section (Now Empty with a Link) -->
+    <!-- Portfolio Section -->
     <div id="portfolio" class="container">
         <h2>Portfolio</h2>
-        <p>Check out my full portfolio on the dedicated page.</p>
-        <a href="portfolio.html">View Portfolio</a>
+        <p>Check out my featured projects:</p>
+        <div class="portfolio-list">
+            <div class="portfolio-item">
+                <h3>Accessible Components</h3>
+                <p>Building inclusive UI components with accessibility in mind.</p>
+                <a href="accessible-components.html">View Project</a>
+            </div>
+        </div>
     </div>
 
     <footer>
