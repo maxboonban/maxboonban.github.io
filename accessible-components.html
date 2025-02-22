@@ -187,9 +187,8 @@
             </div>
             <p>Search Box Keyboard State Model for the US Department of State website does not exist since pressing tab completely skips over the component.</p>
         <ul>
-            <li>🔹 **Persistent search box** (no hidden icon) → improves **learnability & memorability**.</li>
-            <li>🔹 **Click anywhere to exit** (no explicit close button) → improves **efficiency**.</li>
-            <li>🔹 **Keyboard & screen reader support** (logical Tab order, focus indicator) → improves **accessibility**.</li>
+            <li>Original website displays a small search icon and when clicked pops down a disproportionately large search bar across the entire page underneath. </li>
+            <li>There is some temporal mismatch/flickering between the initial state and the active/clicked state.</li>
         </ul>
 
         <h3>Revised State Model</p>
@@ -202,11 +201,28 @@
                     style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         </div>
         <ul>
+            <li>I will improve this by converting the search icon into a full search bar and eliminating the temporal mismatch/flickering.</li>
             <li><strong>Default State:</strong> Search box is always visible.</li>
             <li><strong>Hovered State:</strong> Subtle shadow effect.</li>
             <li><strong>Active State:</strong> Cursor blinks, suggested results appear.</li>
             <li><strong>Exit State:</strong> Clicking outside collapses the search box.</li>
         </ul>
+        <!-- Table for Redesign Analysis -->
+        <h3>Impact on Key Usability Factors</h3>
+        <table>
+            <tr>
+                <th>Learnability</th>
+                <th>Memorability</th>
+                <th>Efficiency</th>
+                <th>Accessibility</th>
+            </tr>
+            <tr>
+                <td>Users can immediately recognize that the search bar is available without needing to hover or click on an icon. No extra cognitive load in learning where to search.</td>
+                <td>The search box is always present, reducing the need for users to recall hidden UI elements. Users are less likely to forget where the search function is.</td>
+                <td>Eliminates unnecessary steps—users don’t need to reveal the search box or find a close button. Clicking anywhere outside the bar exits the mode.</td>
+                <td>Keyboard users can now navigate to the search bar using the Tab key. Focus order is fixed, and screen readers will correctly detect the search function.</td>
+            </tr>
+        </table>
     </div>
 
     <!-- Reflection -->
