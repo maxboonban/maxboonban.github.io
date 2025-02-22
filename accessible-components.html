@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Components - Search Bar Redesign</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #007acc;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #005f99;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #007acc;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007acc;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background: #f4f4f9;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Accessible Components: Search Bar Redesign</h1>
+        <p>Improving usability and accessibility in search interactions.</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Overview -->
+    <div class="container">
+        <h2>Project Overview</h2>
+        <p>The search bar is a critical UI component that allows users to efficiently find content. This project examines how different platforms implement search bars and redesigns the component for improved accessibility and efficiency. 
+            For this case study, I analyzed three search bar implementations—Microsoft 365 Copilot, Netflix, and the U.S. Department of State—to understand their strengths and weaknesses. Based on these insights, I then redesigned the search bar to improve learnability, efficiency, and accessibility </p>
+    </div>
+
+    <!-- Input Analysis -->
+    <div class="container">
+        <h2>Part 1: Input Analysis</h2>
+        <p>We examined how three platforms—Microsoft 365 Copilot, Netflix, and the U.S. Department of State—handle search input via mouse, keyboard, and touch.</p>
+        
+        <table>
+            <tr>
+                <th>Platform</th>
+                <th>Mouse/Touchpad</th>
+                <th>Keyboard</th>
+                <th>Touch</th>
+            </tr>
+            <tr>
+                <td><strong>Microsoft 365 Copilot</strong></td>
+                <td>Search box is always visible, blinking cursor on click, back button available.</td>
+                <td>Tab navigation supported but one-directional, no shortcut to return.</td>
+                <td>Persistent UI allows seamless touch experience.</td>
+            </tr>
+            <tr>
+                <td><strong>Netflix</strong></td>
+                <td>Hidden search icon expands when clicked, disappears when clicking elsewhere.</td>
+                <td>Tab navigation cycles through UI, real-time search updates without pressing Enter.</td>
+                <td>Same behavior as mouse interaction.</td>
+            </tr>
+            <tr>
+                <td><strong>U.S. Department of State</strong></td>
+                <td>Hidden search icon expands into a large search box, requires an explicit close action.</td>
+                <td>Tab navigation skips the search icon entirely.</td>
+                <td>Text size is disproportionately large, making UI inconsistent.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Output Feedback -->
+    <div class="container">
+        <h2>Part 2: Output Feedback</h2>
+        <p>Examining how platforms visually communicate the state of the search box.</p>
+
+        <table>
+            <tr>
+                <th>Platform</th>
+                <th>Hover State</th>
+                <th>Focus State</th>
+                <th>Pressed State</th>
+            </tr>
+            <tr>
+                <td><strong>Microsoft 365 Copilot</strong></td>
+                <td>Darkens text and applies subtle 3D shadow.</td>
+                <td>Drop-down suggestions appear when typing.</td>
+                <td>Search bar remains visible with a back button.</td>
+            </tr>
+            <tr>
+                <td><strong>Netflix</strong></td>
+                <td>No hover effect.</td>
+                <td>Keyboard focus indicator appears.</td>
+                <td>Search box replaces the icon entirely.</td>
+            </tr>
+            <tr>
+                <td><strong>U.S. Department of State</strong></td>
+                <td>Search icon darkens.</td>
+                <td>Keyboard focus is not supported.</td>
+                <td>Large search box appears, requiring an explicit close action.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- State Model & Redesign -->
+    <div class="container">
+        <h2>Part 3: State Model & Component Redesign</h2>
+        <p>Based on these insights, we redesigned the search bar to enhance accessibility.</p>
+        <ul>
+            <li>🔹 **Persistent search box** (no hidden icon) → improves **learnability & memorability**.</li>
+            <li>🔹 **Click anywhere to exit** (no explicit close button) → improves **efficiency**.</li>
+            <li>🔹 **Keyboard & screen reader support** (logical Tab order, focus indicator) → improves **accessibility**.</li>
+        </ul>
+
+        <p>### **Revised State Model**</p>
+        <ul>
+            <li><strong>Default State:</strong> Search box is always visible.</li>
+            <li><strong>Hovered State:</strong> Subtle shadow effect.</li>
+            <li><strong>Active State:</strong> Cursor blinks, suggested results appear.</li>
+            <li><strong>Exit State:</strong> Clicking outside collapses the search box.</li>
+        </ul>
+    </div>
+
+    <!-- Reflection -->
+    <div class="container">
+        <h2>Part 4: Reflection</h2>
+        <p>Designing an accessible search bar requires balancing simplicity and functionality.</p>
+        <ul>
+            <li>✅ Visibility improves **discoverability** without clutter.</li>
+            <li>✅ Full keyboard support ensures **navigation for all users**.</li>
+            <li>✅ Removing unnecessary steps streamlines the experience.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wirattawut (Max) Boonbandansook</p>
+    </footer>
+
+</body>
+</html>
