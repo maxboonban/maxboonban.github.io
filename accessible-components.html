@@ -152,27 +152,25 @@
         <table>
             <tr>
                 <th>Platform</th>
-                <th>Hover State</th>
-                <th>Focus State</th>
-                <th>Pressed State</th>
+                <th>Mouse/Trackpad</th>
+                <th>Keyboard</th>
             </tr>
             <tr>
                 <td><strong>Microsoft 365 Copilot</strong></td>
-                <td>Darkens text and applies subtle 3D shadow.</td>
-                <td>Drop-down suggestions appear when typing.</td>
-                <td>Search bar remains visible with a back button.</td>
+                <td>- Hover states: present when mouse hovers over the search box indicated by a darker text font and 3D effects (lower-emphasis surface overlay) on the search box.
+                    - Pressed State: When clicked, a blinking cursor appears, reinforcing that users can type. The search box expands with drop-down menu and back button appears for easy return.
+                </td>
+                <td>When the Tab key is pressed, the search box gets outlined and gains focus. Dropdown Suggestions: Typing in the search box automatically shows a list of suggested searches.</td>
             </tr>
             <tr>
                 <td><strong>Netflix</strong></td>
-                <td>No hover effect.</td>
-                <td>Keyboard focus indicator appears.</td>
-                <td>Search box replaces the icon entirely.</td>
+                <td>- Hover State: No hover effect on the search icon, making it less discoverable. - Focused State: Clicking on the icon replaces it with the search box, making the transition clear.</td>
+                <td>- Tab Focus: A box outline appears around the search icon, indicating focus. - Live Search Updates: As users type, Netflix dynamically refreshes results without requiring an Enter key press (efficient approach). </td>
             </tr>
             <tr>
                 <td><strong>U.S. Department of State</strong></td>
-                <td>Search icon darkens.</td>
-                <td>Keyboard focus is not supported.</td>
-                <td>Large search box appears, requiring an explicit close action.</td>
+                <td>- Hover State: The search icon darkens slightly, making it more noticeable.  - Focused State: Clicking the icon expands a disproportionately large search box with oversized text.  - Pressed State: Users must manually click the large “X” button to close the search box.</td>
+                <td> Tab Focus: No keyboard focus indicator; pressing Tab skips over the search box entirely. </td>
             </tr>
         </table>
     </div>
