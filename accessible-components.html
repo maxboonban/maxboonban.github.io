@@ -181,17 +181,26 @@
         <p>Based on these insights, we redesigned the search bar to enhance accessibility. I will be focusing on the redesign of the search bar from the US Department of State website. 
             In order to do so, we need to analyze its component from a state model perspective. </p>
             <h3>Current State Model</h3>
-            <div style="text-align: center; margin: 20px 0;">
-                <img src="original_state_mouse.png" alt="Original State - Mouse Interaction" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <p style="font-size: 14px; color: #666;">Figure 1: Original Search Bar Interaction (Mouse/Trackpad)</p>
+            <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+                <img src="original_state_mouse.png" alt="Original State - Mouse Interaction" 
+                     style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             </div>
+            <p>Search Box Keyboard State Model for the US Department of State website does not exist since pressing tab completely skips over the component.</p>
         <ul>
             <li>🔹 **Persistent search box** (no hidden icon) → improves **learnability & memorability**.</li>
             <li>🔹 **Click anywhere to exit** (no explicit close button) → improves **efficiency**.</li>
             <li>🔹 **Keyboard & screen reader support** (logical Tab order, focus indicator) → improves **accessibility**.</li>
         </ul>
 
-        <p>### **Revised State Model**</p>
+        <h3>Revised State Model</p>
+        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+            <img src="redesign_mouse_state.png" alt="Redesign Mouse State - Mouse Interaction" 
+                    style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+            <img src="redesign_keyboard_state.png" alt="Redesign Keyboard State - Keyboard Interaction" 
+                    style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        </div>
         <ul>
             <li><strong>Default State:</strong> Search box is always visible.</li>
             <li><strong>Hovered State:</strong> Subtle shadow effect.</li>
