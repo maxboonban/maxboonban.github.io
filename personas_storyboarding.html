@@ -71,6 +71,18 @@
       margin-bottom: 1rem;
       background: #f9f9f9;
     }
+    .user-summary {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background: #fff;
+    }
+    .user-summary h4 img {
+      vertical-align: middle;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -103,6 +115,7 @@
     <section id="interviews">
       <h2>Interview Components</h2>
       <p>The study included contextual interviews with three individuals who regularly use the CIT building. The interview questions were designed to capture their natural behaviors, expectations, and the challenges they face while navigating the building.</p>
+      
       <h3>Interview Questions</h3>
       <ul>
         <li>Can you describe the path you took to get to the 3rd floor and above of CIT today?</li>
@@ -114,35 +127,47 @@
       </ul>
       
       <h3>User Interview Summaries</h3>
-      <h4>Dan Haramati</h4>
-      <ul>
-        <li>Took the back staircase from Waterman Street after dropping off items in his office.</li>
-        <li>Route choice depended on his starting location (main entrance vs. Waterman Street).</li>
-        <li>Uses this route about 80% of the time; alternatives are used when the back door is inaccessible.</li>
-        <li>Believes there’s no ideal way—efficiency varies with class timing and elevator traffic.</li>
-        <li>Has tried another staircase route from the second floor but found it less convenient.</li>
-        <li>Notes that while the elevator is intuitive, the stairs can be confusing for newcomers.</li>
-      </ul>
+      <div class="user-summary">
+        <h4>
+          <img src="https://via.placeholder.com/40" alt="avatar icon"> Dan Haramati
+        </h4>
+        <ul>
+          <li>Took the back staircase from Waterman Street after dropping off items in his office.</li>
+          <li>Route choice depended on his starting location (main entrance vs. Waterman Street).</li>
+          <li>Uses this route about 80% of the time; alternatives are used when the back door is inaccessible.</li>
+          <li>Believes there’s no ideal way—efficiency varies with class timing and elevator traffic.</li>
+          <li>Has tried another staircase route from the second floor but found it less convenient.</li>
+          <li>Notes that while the elevator is intuitive, the stairs can be confusing for newcomers.</li>
+        </ul>
+      </div>
       
-      <h4>Eileen</h4>
-      <ul>
-        <li>Entered through the main door, took the stairs to the second floor, then the back evacuation stairs to reach the third floor.</li>
-        <li>Prefers the elevator in most situations but sometimes opts for stairs.</li>
-        <li>Uses the same route every time unless heading to a higher floor with a companion.</li>
-        <li>Suggests a single, central staircase would be ideal.</li>
-        <li>Has experimented with the other staircase when coming from Thayer Street.</li>
-        <li>Believes ease of navigation depends on whether one instinctively goes for the elevator or the stairs.</li>
-      </ul>
+      <div class="user-summary">
+        <h4>
+          <img src="https://via.placeholder.com/40" alt="avatar icon"> Eileen
+        </h4>
+        <ul>
+          <li>Entered through the main door, took the stairs to the second floor, then the back evacuation stairs to reach the third floor.</li>
+          <li>Prefers the elevator in most situations but sometimes opts for stairs.</li>
+          <li>Uses the same route every time unless heading to a higher floor with a companion.</li>
+          <li>Suggests a single, central staircase would be ideal.</li>
+          <li>Has experimented with the other staircase when coming from Thayer Street.</li>
+          <li>Believes ease of navigation depends on whether one instinctively goes for the elevator or the stairs.</li>
+        </ul>
+      </div>
       
-      <h4>Aman Agrawal</h4>
-      <ul>
-        <li>Always takes the elevator to reach the third floor.</li>
-        <li>Chooses the elevator as the stairs are perceived to be more complex.</li>
-        <li>Uses the elevator every time.</li>
-        <li>Ideal solution would be a central elevator located at the main entrance.</li>
-        <li>Sometimes uses stairs only to access the second floor.</li>
-        <li>Finds the lift easy to use, though the staircase layout is complicated.</li>
-      </ul>
+      <div class="user-summary">
+        <h4>
+          <img src="https://via.placeholder.com/40" alt="avatar icon"> Aman Agrawal
+        </h4>
+        <ul>
+          <li>Always takes the elevator to reach the third floor.</li>
+          <li>Chooses the elevator as the stairs are perceived to be more complex.</li>
+          <li>Uses the elevator every time.</li>
+          <li>Ideal solution would be a central elevator located at the main entrance.</li>
+          <li>Sometimes uses stairs only to access the second floor.</li>
+          <li>Finds the lift easy to use, though the staircase layout is complicated.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Persona Development -->
