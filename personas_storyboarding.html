@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personas & Storyboarding - UX Study</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #007acc;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    nav {
+      background: #005f99;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+      color: #007acc;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .persona {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background: #eef3f7;
+    }
+    ul {
+      list-style: disc;
+      margin-left: 2rem;
+    }
+    .frame {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      background: #f9f9f9;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem 0;
+      background: #f4f4f9;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Personas & Storyboarding - UX Study</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- UX Study Overview -->
+    <section id="overview">
+      <h2>UX Study Overview</h2>
+      <p>This study examines how users navigate the CIT building using different flow methods—specifically, the various entrances, staircases, and elevators—to reach the 3rd floor. The goal is to understand user behavior, preferences, and challenges so that we can improve the overall wayfinding and user experience in this environment.</p>
+    </section>
+
+    <!-- Interview Components -->
+    <section id="interviews">
+      <h2>Interview Components</h2>
+      <p>The study included contextual interviews with three individuals who regularly use the CIT building. The interview questions were designed to capture their natural behaviors, expectations, and the challenges they face while navigating the building.</p>
+      <h3>Interview Questions</h3>
+      <ul>
+        <li>Can you describe the path you took to get to the 3rd floor and above of CIT today?</li>
+        <li>What factors influenced your decision to take that route?</li>
+        <li>How often do you take this route when moving around CIT?</li>
+        <li>If you had to describe the ideal way to reach the 3rd floor of CIT, what would it look like?</li>
+        <li>Have you ever tried using a different route than your usual one? If so, why?</li>
+        <li>For people unfamiliar with CIT, do you think it’s easy to figure out how to reach the 3rd floor? Why or why not?</li>
+      </ul>
+      
+      <h3>User Interview Summaries</h3>
+      <h4>Dan Haramati</h4>
+      <ul>
+        <li>Took the back staircase from Waterman Street after dropping off items in his office.</li>
+        <li>Route choice depended on his starting location (main entrance vs. Waterman Street).</li>
+        <li>Uses this route about 80% of the time; alternatives are used when the back door is inaccessible.</li>
+        <li>Believes there’s no ideal way—efficiency varies with class timing and elevator traffic.</li>
+        <li>Has tried another staircase route from the second floor but found it less convenient.</li>
+        <li>Notes that while the elevator is intuitive, the stairs can be confusing for newcomers.</li>
+      </ul>
+      
+      <h4>Eileen</h4>
+      <ul>
+        <li>Entered through the main door, took the stairs to the second floor, then the back evacuation stairs to reach the third floor.</li>
+        <li>Prefers the elevator in most situations but sometimes opts for stairs.</li>
+        <li>Uses the same route every time unless heading to a higher floor with a companion.</li>
+        <li>Suggests a single, central staircase would be ideal.</li>
+        <li>Has experimented with the other staircase when coming from Thayer Street.</li>
+        <li>Believes ease of navigation depends on whether one instinctively goes for the elevator or the stairs.</li>
+      </ul>
+      
+      <h4>Aman Agrawal</h4>
+      <ul>
+        <li>Always takes the elevator to reach the third floor.</li>
+        <li>Chooses the elevator as the stairs are perceived to be more complex.</li>
+        <li>Uses the elevator every time.</li>
+        <li>Ideal solution would be a central elevator located at the main entrance.</li>
+        <li>Sometimes uses stairs only to access the second floor.</li>
+        <li>Finds the lift easy to use, though the staircase layout is complicated.</li>
+      </ul>
+    </section>
+
+    <!-- Persona Development -->
+    <section id="personas">
+      <h2>Persona Development</h2>
+      <p>Based on these interviews and observations, I synthesized the feedback into empathy maps to capture what users <strong>think, feel, say,</strong> and <strong>do</strong> when navigating CIT. This process revealed two key archetypes:</p>
+      
+      <div class="persona">
+        <h3>Athletic Alice</h3>
+        <p><strong>Description:</strong> A physically active individual who enjoys running and prefers a predictable routine. She consistently opts for the stairs to get extra exercise and avoid delays.</p>
+        <h4>Thinks</h4>
+        <ul>
+          <li>"I can get some extra steps in by taking the stairs."</li>
+          <li>"Waiting for the elevator is such a waste of time."</li>
+          <li>"It’s good to stay active even in small ways throughout the day."</li>
+        </ul>
+        <h4>Feels</h4>
+        <ul>
+          <li>Efficient when sticking to her schedule.</li>
+          <li>Frustrated by crowded elevators and slow-moving people.</li>
+          <li>Independent and in control.</li>
+        </ul>
+        <h4>Says</h4>
+        <ul>
+          <li>"I’ll just take the stairs; it’s quicker."</li>
+          <li>"I can’t stand waiting for the elevator, especially when it stops at every floor."</li>
+        </ul>
+        <h4>Does</h4>
+        <ul>
+          <li>Chooses stairs over elevators consistently.</li>
+          <li>Follows a fixed route to avoid wasting time deciding.</li>
+        </ul>
+      </div>
+      
+      <div class="persona">
+        <h3>Undecisive Bob</h3>
+        <p><strong>Description:</strong> Bob struggles to decide between taking the stairs or the elevator. His indecision and hesitation often lead to delays, making him late.</p>
+        <h4>Thinks</h4>
+        <ul>
+          <li>"The stairs might be faster, but what if I get tired halfway?"</li>
+          <li>"If I take the elevator, I might have to wait too long."</li>
+        </ul>
+        <h4>Feels</h4>
+        <ul>
+          <li>Conflicted between efficiency and convenience.</li>
+          <li>Regretful when his choice turns out to be slower.</li>
+          <li>Indecisive and anxious at decision points.</li>
+        </ul>
+        <h4>Says</h4>
+        <ul>
+          <li>"Should I take the stairs or the elevator today?"</li>
+          <li>"Ugh, the elevator’s taking forever… but are the stairs really worth it?"</li>
+          <li>"Maybe I’ll just wait a bit longer for the elevator."</li>
+        </ul>
+        <h4>Does</h4>
+        <ul>
+          <li>Pauses at decision points.</li>
+          <li>Shifts direction multiple times before committing.</li>
+          <li>Frequently glances at the elevator display while hesitating.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Storyboard for Undecisive Bob -->
+    <section id="storyboard">
+      <h2>Storyboard: Undecisive Bob</h2>
+      <p>This storyboard captures Bob’s entire user journey as he navigates CIT, illustrating his moments of indecision and the resulting delays.</p>
+      
+      <div class="frame">
+        <h4>Frame 1: Entering CIT</h4>
+        <p>Bob enters the CIT building, checking his watch as he rushes in.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 2: Confronting the Choice</h4>
+        <p>He spots the staircase immediately upon entry and hesitates, wondering if it might be faster.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 3: Choosing the Elevator</h4>
+        <p>Bob opts for the elevator, thinking it will be quicker, and presses the button.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 4: Growing Frustration</h4>
+        <p>He waits anxiously as the elevator does not arrive immediately, growing more frustrated.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 5: Switching Gears</h4>
+        <p>Deciding he’s wasting time, Bob rushes back toward the staircase.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 6: Missed Opportunity</h4>
+        <p>As he reaches the staircase, the elevator arrives—but it’s too late to switch.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 7: Rushing Up the Stairs</h4>
+        <p>Bob climbs the stairs in a hurry, glancing back in regret.</p>
+      </div>
+      <div class="frame">
+        <h4>Frame 8: Arriving Late</h4>
+        <p>He finally reaches the 3rd floor, only to discover that others who waited for the elevator are already ahead.</p>
+      </div>
+    </section>
+
+    <!-- Explanation of Synthesis -->
+    <section id="synthesis">
+      <h2>From Interviews to Insights</h2>
+      <p>The interviews and observations revealed diverse behaviors and pain points. By analyzing recurring themes—such as the desire for efficiency, frustrations with delays, and the conflict between convenience and physical effort—I crafted empathy maps that capture what users think, feel, say, and do. These insights were distilled into the personas of Athletic Alice and Undecisive Bob, which informed the design of the storyboard for Bob. This process illustrates how empirical feedback can drive user-centered design improvements in real-world navigation scenarios.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; Wirattawut (Max) Boonbandansook</p>
+  </footer>
+
+</body>
+</html>
