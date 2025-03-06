@@ -53,35 +53,32 @@
     section {
       margin-bottom: 2rem;
     }
-    .persona {
+    .persona, .user-summary {
       border: 1px solid #ddd;
       border-radius: 8px;
       padding: 1rem;
       margin-bottom: 1.5rem;
       background: #eef3f7;
     }
-    ul {
-      list-style: disc;
-      margin-left: 2rem;
-    }
-    .frame {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      background: #f9f9f9;
-    }
     .user-summary {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
       background: #fff;
     }
     .user-summary h4 img {
       vertical-align: middle;
       margin-right: 10px;
       border-radius: 50%;
+    }
+    .storyboard-images {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .storyboard-images img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     footer {
       text-align: center;
@@ -235,38 +232,9 @@
     <section id="storyboard">
       <h2>Storyboard: Undecisive Bob</h2>
       <p>This storyboard captures Bob’s entire user journey as he navigates CIT, illustrating his moments of indecision and the resulting delays.</p>
-      
-      <div class="frame">
-        <h4>Frame 1: Entering CIT</h4>
-        <p>Bob enters the CIT building, checking his watch as he rushes in.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 2: Confronting the Choice</h4>
-        <p>He spots the staircase immediately upon entry and hesitates, wondering if it might be faster.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 3: Choosing the Elevator</h4>
-        <p>Bob opts for the elevator, thinking it will be quicker, and presses the button.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 4: Growing Frustration</h4>
-        <p>He waits anxiously as the elevator does not arrive immediately, growing more frustrated.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 5: Switching Gears</h4>
-        <p>Deciding he’s wasting time, Bob rushes back toward the staircase.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 6: Missed Opportunity</h4>
-        <p>As he reaches the staircase, the elevator arrives—but it’s too late to switch.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 7: Rushing Up the Stairs</h4>
-        <p>Bob climbs the stairs in a hurry, glancing back in regret.</p>
-      </div>
-      <div class="frame">
-        <h4>Frame 8: Arriving Late</h4>
-        <p>He finally reaches the 3rd floor, only to discover that others who waited for the elevator are already ahead.</p>
+      <div class="storyboard-images">
+        <img src="storyboard_1_captions.png" alt="Storyboard 1 for Undecisive Bob">
+        <img src="storyboard_2_captions.png" alt="Storyboard 2 for Undecisive Bob">
       </div>
     </section>
 
