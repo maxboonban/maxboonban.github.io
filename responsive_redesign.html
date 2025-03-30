@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redesign Project</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  h1 {
+    color: #007acc;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+  }
+  h2 {
+    color: #007acc;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  h3 {
+    color: #007acc;
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  ul {
+    margin-bottom: 1em;
+    padding-left: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+  }
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1em;
+  }
+  button {
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  button:hover {
+    background-color: #005f99;
+  }
+</style>
+</head>
+<body>
+
+<h1>Redesign Objectives</h1>
+<p>The objective of this project is to practice the full workflow of redesigning a webpage. Specifically, the project involves choosing one webpage of choice and analyzing and identifying usability and accessibility problems within that existing web interface, creating visual mockups for different screen sizes, and finally, building a fully responsive website based on these prototypes.</p>
+
+<h1>Chosen Web Interface</h1>
+<p>I selected When2Meet, a popular scheduling tool frequently used to coordinate meetings. Despite its usefulness, When2Meet has clear design flaws—such as the inability to edit schedules once created, ambiguous labeling, and poor accessibility—that negatively impact the overall user experience. By identifying these shortcomings, this redesign aims to create a responsive, intuitive, and inclusive version of the website, enhancing usability across all devices and for all users.</p>
+
+<h1>Identifying Usability Problems</h1>
+<h2>Why When2Meet?</h2>
+<p>I chose this webpage based on my personal experience using it to coordinate meeting times with colleagues. While the site is simple, it lacks thoughtful design in key areas. For example, after creating a schedule with limited availability for the next day, a colleague requested an extension to include the following two days. However, When2Meet does not allow schedule edits, forcing me to generate a new link and ask everyone to re-enter their availability—a tedious and inefficient process. These usability challenges motivated me to redesign the webpage for a more seamless scheduling experience.</p>
+
+<h2>Usability Analysis</h2>
+<p>The analysis below clearly identifies significant usability issues that negatively affect users:</p>
+<table>
+  <tr>
+    <th>Metrics</th>
+    <th>Problem Description</th>
+  </tr>
+  <tr>
+    <td>Efficiency</td>
+    <td>Cumbersome editing process: once a schedule is created, there is no way to modify it. If changes are needed, users will have to create a completely new schedule and ask all participants to re-enter their availability, making this process extremely inefficient.</td>
+  </tr>
+  <tr>
+    <td>Learnability</td>
+    <td>Inconsistent navigation pattern making it difficult to get the intuition of how the site is organized and where the flow should be.</td>
+  </tr>
+  <tr>
+    <td>Memorability</td>
+    <td>Lack of visual cues such as icons, headings to help users recall where the essential features of the webpage are.</td>
+  </tr>
+  <tr>
+    <td>Conceptual Model</td>
+    <td>Ambiguous labeling on key actions and section headings creates a misalignment between what users expect and the intended functionalities of the webpage. For example, the label “No earlier than” is ambiguous regarding the starting time window for scheduling.</td>
+  </tr>
+</table>
+
+<h2>Accessibility Analysis</h2>
+<ol>
+  <li><strong>Mouse-Dependent Interaction:</strong> The webpage’s scheduling grid can only be accessed via mouse interaction, requiring users to have precise mouse control to click on the days to indicate availability. This design is not keyboard friendly or accessible via alternative input methods.</li>
+  <li><strong>Inadequate Form Labeling:</strong> Elements such as the event name creation lack proper labeling or association with a legend, which can lead to user confusion and incomplete form submissions. The time selection component also does not have a label, further contributing to potential confusion.</li>
+</ol>
+
+<h2>Reflection</h2>
+<p>The accessibility analysis highlights significant and legitimate concerns. The existing interface excludes many potential users, specifically those relying on assistive technologies or using mobile devices. Addressing these issues is essential for inclusive and universally usable design.</p>
+
+<h1>Visual Redesign</h1>
+<h2>Visual Design Style Guide</h2>
+<img src="interaction-design/visual_design_guide.jpg" alt="Visual Design Style Guide">
+
+<h3>Annotated Mockups & Responsive Decisions</h3>
+
+<h3>Mobile Mockup (iPhone)</h3>
+<img src="interaction-design/phone.jpg" alt="Mobile Mockup">
+<ul>
+  <li>Components stacked vertically for intuitive scrolling.</li>
+  <li>Slightly larger fonts and spacing optimized for small screens.</li>
+</ul>
+
+<h3>Tablet Mockup (iPad)</h3>
+<img src="interaction-design/ipad.jpg" alt="Tablet Mockup">
+<ul>
+  <li>Similar stacking pattern to mobile with adjusted font size and spacing.</li>
+  <li>Input fields rearrange vertically, ensuring accessibility and readability.</li>
+  <li>Slight reduction in spacing between dropdown options to accommodate narrower widths.</li>
+</ul>
+
+<h3>Desktop Mockup</h3>
+<img src="interaction-design/macbook.jpg" alt="Desktop Mockup">
+<ul>
+  <li>Layout splits into a two-column format:</li>
+  <ul>
+    <li>Left side: Logo and introductory content for context.</li>
+    <li>Right side: Scheduling interactions (calendar and input fields).</li>
+  </ul>
+</ul>
+
+<h2>Key Design Improvements</h2>
+<h3>Navigation</h3>
+<ul>
+  <li>Clearly defined “Create New Event” and “Edit Existing Event” buttons allow easy mode-switching without ambiguity. Selecting “Edit Existing Event” dynamically adjusts inputs accordingly.</li>
+</ul>
+
+<h3>Accessibility Improvements</h3>
+<ul>
+  <li>Date and time selections are accessible via keyboard navigation (Tab key).</li>
+  <li>Clear labeling for event name and timezone inputs, meeting accessibility standards.</li>
+</ul>
+
+<h3>Responsive Layout Adjustments</h3>
+<ul>
+  <li>For smaller screens (tablet/mobile), elements stack logically in chronological order—mode selection, event naming, date selection, and time slots.</li>
+  <li>Desktop layout leverages horizontal space, clearly separating introductory content from interaction components for improved readability.</li>
+</ul>
+
+<h2>Interactive Redesigned When2Meet</h2>
+<p>To access the interactive redesigned webpage, click the button below:</p>
+<button onclick="location.href='when2meet_v2.html'">Visit Redesigned When2Meet</button>
+
+</body>
+</html>
