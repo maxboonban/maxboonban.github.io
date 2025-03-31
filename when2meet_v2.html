@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>When2Meet</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "Avenir";
+        src: local("Avenir");
+      }
+
+      body {
+        font-family:
+          "Avenir",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        min-height: 100vh;
+        background-color: #fff;
+      }
+
+      .event-type-btn {
+        background-color: #f9f9f9;
+        border: 1px solid #787878;
+      }
+
+      .event-type-btn.active {
+        background-color: #cdfedb !important;
+        border-color: #34a853 !important;
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 49px;
+        text-align: center;
+      }
+
+      .day-inactive {
+        color: #d9d9d9;
+      }
+
+      .day-selected {
+        position: relative;
+        color: #fff;
+        z-index: 1;
+      }
+
+      .day-selected::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35px;
+        height: 29px;
+        background-color: #34a853;
+        border-radius: 9999px;
+        z-index: -1;
+      }
+
+      .custom-select {
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 7L12.1292 0.25H0.870835L6.5 7Z' fill='%23787878'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right center;
+        padding-right: 24px;
+      }
+
+      .logo-section {
+        padding: 48px 24px;
+      }
+
+      .form-section {
+        background-color: #fff;
+        padding: 48px 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row min-vh-100">
+        <!-- Left Column -->
+        <div class="col-md-4 logo-section">
+          <div class="d-flex flex-column h-100 justify-content-center">
+            <img
+              src="images/logo.png"
+              alt="When2meet Logo"
+              class="img-fluid mb-4"
+              style="max-width: 150px"
+            />
+            <h1 class="text-success fw-bold fs-2 mb-4">Find a time 2 meet!</h1>
+            <p class="fs-4">
+              Fill in your availability to find a common time to meet with
+              others
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-8 form-section">
+          <div class="mx-auto" style="max-width: 700px">
+            <div class="d-flex gap-1 mb-4">
+              <button class="btn event-type-btn active flex-grow-1 fw-bold">
+                Create New Event
+              </button>
+              <button class="btn event-type-btn flex-grow-1 fw-bold">
+                Edit Existing Event
+              </button>
+            </div>
+
+            <form>
+              <div class="mb-4">
+                <div class="rounded-3 bg-light bg-opacity-15 border p-3">
+                  <input
+                    type="text"
+                    class="form-control border-0 bg-transparent fw-bold"
+                    placeholder="Name your event..."
+                    style="color: rgba(0, 0, 0, 0.31)"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h2 class="fs-5 fw-bold mb-3">Date</h2>
+                <div class="d-flex gap-5 mb-4">
+                  <div>
+                    <label class="text-secondary mb-2">Select Month</label>
+                    <select
+                      class="form-select custom-select border-0 border-bottom rounded-0"
+                    >
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3" selected>March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="text-secondary mb-2">Select Day</label>
+                    <select
+                      class="form-select custom-select border-0 border-bottom rounded-0"
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13" selected>13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="border p-4">
+                  <h3 class="text-center fw-bold mb-4" style="color: #484848">
+                    March 2025
+                  </h3>
+                  <div class="calendar-grid fw-bold mb-4">
+                    <div>S</div>
+                    <div>M</div>
+                    <div>T</div>
+                    <div>W</div>
+                    <div>T</div>
+                    <div>F</div>
+                    <div>S</div>
+                  </div>
+                  <div class="calendar-grid fw-bold">
+                    <span class="day-inactive">2</span>
+                    <span class="day-inactive">3</span>
+                    <span class="day-inactive">4</span>
+                    <span class="day-inactive">5</span>
+                    <span class="day-inactive">6</span>
+                    <span class="day-inactive">7</span>
+                    <span class="day-inactive">8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                    <span>13</span>
+                    <span>14</span>
+                    <span>15</span>
+                    <span>16</span>
+                    <span>17</span>
+                    <span>18</span>
+                    <span class="day-selected">19</span>
+                    <span>20</span>
+                    <span>21</span>
+                    <span>22</span>
+                    <span>23</span>
+                    <span>24</span>
+                    <span>25</span>
+                    <span>26</span>
+                    <span>27</span>
+                    <span>28</span>
+                    <span>29</span>
+                    <span>30</span>
+                    <span>31</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h2 class="fs-5 fw-bold mb-3">Time</h2>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="flex-grow-1">
+                    <select class="form-select bg-light bg-opacity-15">
+                      <option value="0000">12:00 AM</option>
+                      <option value="0030">12:30 AM</option>
+                      <option value="0100">1:00 AM</option>
+                      <option value="0130">1:30 AM</option>
+                      <option value="0200">2:00 AM</option>
+                      <option value="0230">2:30 AM</option>
+                      <option value="0300">3:00 AM</option>
+                      <option value="0330">3:30 AM</option>
+                      <option value="0400">4:00 AM</option>
+                      <option value="0430">4:30 AM</option>
+                      <option value="0500">5:00 AM</option>
+                      <option value="0530">5:30 AM</option>
+                      <option value="0600">6:00 AM</option>
+                      <option value="0630">6:30 AM</option>
+                      <option value="0700">7:00 AM</option>
+                      <option value="0730">7:30 AM</option>
+                      <option value="0800">8:00 AM</option>
+                      <option value="0830">8:30 AM</option>
+                      <option value="0900" selected>9:00 AM</option>
+                      <option value="0930">9:30 AM</option>
+                      <option value="1000">10:00 AM</option>
+                      <option value="1030">10:30 AM</option>
+                      <option value="1100">11:00 AM</option>
+                      <option value="1130">11:30 AM</option>
+                      <option value="1200">12:00 PM</option>
+                      <option value="1230">12:30 PM</option>
+                      <option value="1300">1:00 PM</option>
+                      <option value="1330">1:30 PM</option>
+                      <option value="1400">2:00 PM</option>
+                      <option value="1430">2:30 PM</option>
+                      <option value="1500">3:00 PM</option>
+                      <option value="1530">3:30 PM</option>
+                      <option value="1600">4:00 PM</option>
+                      <option value="1630">4:30 PM</option>
+                      <option value="1700">5:00 PM</option>
+                      <option value="1730">5:30 PM</option>
+                      <option value="1800">6:00 PM</option>
+                      <option value="1830">6:30 PM</option>
+                      <option value="1900">7:00 PM</option>
+                      <option value="1930">7:30 PM</option>
+                      <option value="2000">8:00 PM</option>
+                      <option value="2030">8:30 PM</option>
+                      <option value="2100">9:00 PM</option>
+                      <option value="2130">9:30 PM</option>
+                      <option value="2200">10:00 PM</option>
+                      <option value="2230">10:30 PM</option>
+                      <option value="2300">11:00 PM</option>
+                      <option value="2330">11:30 PM</option>
+                    </select>
+                  </div>
+                  <span class="fs-5">to</span>
+                  <div class="flex-grow-1">
+                    <select class="form-select bg-light bg-opacity-15">
+                      <option value="0000">12:00 AM</option>
+                      <option value="0030">12:30 AM</option>
+                      <option value="0100">1:00 AM</option>
+                      <option value="0130">1:30 AM</option>
+                      <option value="0200">2:00 AM</option>
+                      <option value="0230">2:30 AM</option>
+                      <option value="0300">3:00 AM</option>
+                      <option value="0330">3:30 AM</option>
+                      <option value="0400">4:00 AM</option>
+                      <option value="0430">4:30 AM</option>
+                      <option value="0500">5:00 AM</option>
+                      <option value="0530">5:30 AM</option>
+                      <option value="0600">6:00 AM</option>
+                      <option value="0630">6:30 AM</option>
+                      <option value="0700">7:00 AM</option>
+                      <option value="0730">7:30 AM</option>
+                      <option value="0800">8:00 AM</option>
+                      <option value="0830">8:30 AM</option>
+                      <option value="0900">9:00 AM</option>
+                      <option value="0930">9:30 AM</option>
+                      <option value="1000">10:00 AM</option>
+                      <option value="1030">10:30 AM</option>
+                      <option value="1100">11:00 AM</option>
+                      <option value="1130">11:30 AM</option>
+                      <option value="1200">12:00 PM</option>
+                      <option value="1230">12:30 PM</option>
+                      <option value="1300">1:00 PM</option>
+                      <option value="1330">1:30 PM</option>
+                      <option value="1400">2:00 PM</option>
+                      <option value="1430">2:30 PM</option>
+                      <option value="1500">3:00 PM</option>
+                      <option value="1530">3:30 PM</option>
+                      <option value="1600">4:00 PM</option>
+                      <option value="1630">4:30 PM</option>
+                      <option value="1700" selected>5:00 PM</option>
+                      <option value="1730">5:30 PM</option>
+                      <option value="1800">6:00 PM</option>
+                      <option value="1830">6:30 PM</option>
+                      <option value="1900">7:00 PM</option>
+                      <option value="1930">7:30 PM</option>
+                      <option value="2000">8:00 PM</option>
+                      <option value="2030">8:30 PM</option>
+                      <option value="2100">9:00 PM</option>
+                      <option value="2130">9:30 PM</option>
+                      <option value="2200">10:00 PM</option>
+                      <option value="2230">10:30 PM</option>
+                      <option value="2300">11:00 PM</option>
+                      <option value="2330">11:30 PM</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <label class="text-secondary">Timezone</label>
+                <select
+                  class="form-select custom-select border-0 border-bottom rounded-0 flex-grow-1"
+                >
+                  <option>(GMT-12:00) International Date Line West</option>
+                  <option>(GMT-11:00) Midway Island, Samoa</option>
+                  <option>(GMT-10:00) Hawaii</option>
+                  <option>(GMT-09:00) Alaska</option>
+                  <option>(GMT-08:00) Pacific Time (US & Canada)</option>
+                  <option>(GMT-07:00) Mountain Time (US & Canada)</option>
+                  <option>(GMT-06:00) Central Time (US & Canada)</option>
+                  <option selected>
+                    (GMT-05:00) Eastern Time (US & Canada)
+                  </option>
+                  <option>(GMT-04:00) Atlantic Time (Canada)</option>
+                  <option>(GMT-03:00) Buenos Aires, Georgetown</option>
+                  <option>(GMT-02:00) Mid-Atlantic</option>
+                  <option>(GMT-01:00) Azores, Cape Verde Is.</option>
+                  <option>(GMT+00:00) London, Dublin, Edinburgh</option>
+                  <option>(GMT+01:00) Paris, Berlin, Rome, Madrid</option>
+                  <option>(GMT+02:00) Cairo, Helsinki, Athens</option>
+                  <option>(GMT+03:00) Moscow, Baghdad, Kuwait</option>
+                  <option>(GMT+04:00) Abu Dhabi, Dubai, Muscat</option>
+                  <option>(GMT+05:00) Islamabad, Karachi</option>
+                  <option>(GMT+06:00) Dhaka, Almaty</option>
+                  <option>(GMT+07:00) Bangkok, Jakarta</option>
+                  <option>(GMT+08:00) Beijing, Hong Kong</option>
+                  <option>(GMT+09:00) Tokyo, Seoul</option>
+                  <option>(GMT+10:00) Sydney, Melbourne</option>
+                  <option>(GMT+11:00) Solomon Is., New Caledonia</option>
+                  <option>(GMT+12:00) Fiji, Auckland</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-success w-100 fw-bold py-2">
+                Let's Meet!
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
