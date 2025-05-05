@@ -4,236 +4,381 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Redesign - When2Meet</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <style>
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --accent-color: #666666;
+        --highlight-color: #4285f4;
+        --light-gray: #f8f9fa;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        line-height: 1.5;
+        font-weight: 300;
+        font-size: 15px;
     }
-    header {
-      background: #007acc;
-      color: white;
-      padding: 1.5rem 0;
-      text-align: center;
+
+    .navbar {
+        padding: 1.5rem 0;
+        background-color: var(--bg-color);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
     }
-    nav {
-      background: #005f99;
-      padding: 0.5rem 0;
-      text-align: center;
+
+    .navbar-brand {
+        font-weight: 500;
+        font-size: 1rem;
+        color: var(--text-color);
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
+
+    .nav-link {
+        color: var(--text-color);
+        font-weight: 400;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
     }
-    nav ul li {
-      margin: 0 15px;
+
+    .nav-link.active, .nav-link:hover {
+        color: var(--highlight-color);
     }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+
+    .contact-link {
+        color: var(--highlight-color);
+        font-weight: 500;
     }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    section {
+        padding: 4rem 0;
     }
-    h1, h2 {
-      color: #007acc;
+    
+    .project-header {
+        padding: 7rem 0 2rem 0;
+        background-color: var(--bg-color);
+        margin-top: 3rem;
     }
+    
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+    
     h3 {
-      color: #007acc;
-      margin-top: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
     }
-    a {
-      color: #007acc;
-      text-decoration: none;
+    
+    h4 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
     }
-    a:hover {
-      text-decoration: underline;
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
     }
+    
+    .content-section {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
     table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 0.9rem;
     }
+
     th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
+        border: 1px solid rgba(0,0,0,0.1);
+        padding: 12px;
+        text-align: left;
     }
+
     th {
-      background-color: #007acc;
-      color: white;
+        background-color: var(--light-gray);
+        color: var(--text-color);
+        font-weight: 500;
     }
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1rem 0;
-      background: #f4f4f9;
-      color: #666;
+
+    .btn {
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
-    ul {
-      padding-left: 20px;
+
+    .btn:hover {
+        background-color: var(--text-color);
     }
-    button {
-      background-color: #007acc;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    button:hover {
-      background-color: #005f99;
-    }
+
     img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1rem;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin: 1.5rem 0;
+    }
+
+    ul {
+        padding-left: 20px;
+        margin-bottom: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    footer {
+        background-color: var(--text-color);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 0.85rem;
+        margin-top: 3rem;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1.5rem 0;
+    }
+
+    .image-container img {
+        max-width: 90%;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+        
+        .content-section {
+            padding: 1.5rem;
+        }
     }
   </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Max</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#design-projects">Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#technical-projects">Technical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <header>
-    <h1>Responsive Redesign: When2Meet</h1>
-    <p>Enhancing usability and accessibility across devices</p>
-  </header>
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <h1>Responsive Redesign: When2Meet</h1>
+            <p>Enhancing usability and accessibility across devices</p>
+        </div>
+    </section>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-    </ul>
-  </nav>
+    <!-- Redesign Objectives -->
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Redesign Objectives</h2>
+                <p>The objective of this project is to practice the full workflow of redesigning a webpage. Specifically, the project involves choosing one webpage of choice and analyzing and identifying usability and accessibility problems within that existing web interface, creating visual mockups for different screen sizes, and finally, building a fully responsive website based on these prototypes.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="container">
-    <h2>Redesign Objectives</h2>
-    <p>The objective of this project is to practice the full workflow of redesigning a webpage. Specifically, the project involves choosing one webpage of choice and analyzing and identifying usability and accessibility problems within that existing web interface, creating visual mockups for different screen sizes, and finally, building a fully responsive website based on these prototypes.</p>
-  </div>
+    <!-- Chosen Web Interface -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="content-section">
+                <h2>Chosen Web Interface</h2>
+                <p>I selected When2Meet, a popular scheduling tool frequently used to coordinate meetings. Despite its usefulness, When2Meet has clear design flaws—such as the inability to edit schedules once created, ambiguous labeling, and poor accessibility—that negatively impact the overall user experience. By identifying these shortcomings, this redesign aims to create a responsive, intuitive, and inclusive version of the website, enhancing usability across all devices and for all users.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="container">
-    <h2>Chosen Web Interface</h2>
-    <p>I selected When2Meet, a popular scheduling tool frequently used to coordinate meetings. Despite its usefulness, When2Meet has clear design flaws—such as the inability to edit schedules once created, ambiguous labeling, and poor accessibility—that negatively impact the overall user experience. By identifying these shortcomings, this redesign aims to create a responsive, intuitive, and inclusive version of the website, enhancing usability across all devices and for all users.</p>
-  </div>
+    <!-- Identifying Usability Problems -->
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Identifying Usability Problems</h2>
+                <h3>Why When2Meet?</h3>
+                <p>I chose this webpage based on my personal experience using it to coordinate meeting times with colleagues. While the site is simple, it lacks thoughtful design in key areas. For example, after creating a schedule with limited availability for the next day, a colleague requested an extension to include the following two days. However, When2Meet does not allow schedule edits, forcing me to generate a new link and ask everyone to re-enter their availability—a tedious and inefficient process. These usability challenges motivated me to redesign the webpage for a more seamless scheduling experience.</p>
 
-  <div class="container">
-    <h2>Identifying Usability Problems</h2>
-    <h3>Why When2Meet?</h3>
-    <p>I chose this webpage based on my personal experience using it to coordinate meeting times with colleagues. While the site is simple, it lacks thoughtful design in key areas. For example, after creating a schedule with limited availability for the next day, a colleague requested an extension to include the following two days. However, When2Meet does not allow schedule edits, forcing me to generate a new link and ask everyone to re-enter their availability—a tedious and inefficient process. These usability challenges motivated me to redesign the webpage for a more seamless scheduling experience.</p>
+                <h3>Usability Analysis</h3>
+                <p>The analysis below clearly identifies significant usability issues that negatively affect users:</p>
+                <table>
+                    <tr>
+                        <th>Metrics</th>
+                        <th>Problem Description</th>
+                    </tr>
+                    <tr>
+                        <td>Efficiency</td>
+                        <td>Cumbersome editing process: once a schedule is created, there is no way to modify it. If changes are needed, users will have to create a completely new schedule and ask all participants to re-enter their availability, making this process extremely inefficient.</td>
+                    </tr>
+                    <tr>
+                        <td>Learnability</td>
+                        <td>Inconsistent navigation pattern making it difficult to get the intuition of how the site is organized and where the flow should be.</td>
+                    </tr>
+                    <tr>
+                        <td>Memorability</td>
+                        <td>Lack of visual cues such as icons and headings to help users recall where the essential features of the webpage are.</td>
+                    </tr>
+                    <tr>
+                        <td>Conceptual Model</td>
+                        <td>Ambiguous labeling on key actions and section headings creates a misalignment between user expectations and the intended functionalities of the webpage. For example, the label "No earlier than" is ambiguous regarding the starting time window for scheduling.</td>
+                    </tr>
+                </table>
 
-    <h3>Usability Analysis</h3>
-    <p>The analysis below clearly identifies significant usability issues that negatively affect users:</p>
-    <table>
-      <tr>
-        <th>Metrics</th>
-        <th>Problem Description</th>
-      </tr>
-      <tr>
-        <td>Efficiency</td>
-        <td>Cumbersome editing process: once a schedule is created, there is no way to modify it. If changes are needed, users will have to create a completely new schedule and ask all participants to re-enter their availability, making this process extremely inefficient.</td>
-      </tr>
-      <tr>
-        <td>Learnability</td>
-        <td>Inconsistent navigation pattern making it difficult to get the intuition of how the site is organized and where the flow should be.</td>
-      </tr>
-      <tr>
-        <td>Memorability</td>
-        <td>Lack of visual cues such as icons and headings to help users recall where the essential features of the webpage are.</td>
-      </tr>
-      <tr>
-        <td>Conceptual Model</td>
-        <td>Ambiguous labeling on key actions and section headings creates a misalignment between user expectations and the intended functionalities of the webpage. For example, the label “No earlier than” is ambiguous regarding the starting time window for scheduling.</td>
-      </tr>
-    </table>
+                <h3>Accessibility Analysis</h3>
+                <ol>
+                    <li><strong>Mouse-Dependent Interaction:</strong> The webpage's scheduling grid can only be accessed via mouse interaction, requiring users to have precise mouse control to click on the days to indicate availability. This design is not keyboard friendly or accessible via alternative input methods.</li>
+                    <li><strong>Inadequate Form Labeling:</strong> Elements such as the event name creation lack proper labeling or association with a legend, which can lead to user confusion and incomplete form submissions. The time selection component also does not have a label, further contributing to potential confusion.</li>
+                </ol>
 
-    <h3>Accessibility Analysis</h3>
-    <ol>
-      <li><strong>Mouse-Dependent Interaction:</strong> The webpage’s scheduling grid can only be accessed via mouse interaction, requiring users to have precise mouse control to click on the days to indicate availability. This design is not keyboard friendly or accessible via alternative input methods.</li>
-      <li><strong>Inadequate Form Labeling:</strong> Elements such as the event name creation lack proper labeling or association with a legend, which can lead to user confusion and incomplete form submissions. The time selection component also does not have a label, further contributing to potential confusion.</li>
-    </ol>
+                <h3>Reflection</h3>
+                <p>The accessibility analysis highlights significant and legitimate concerns. The existing interface excludes many potential users, specifically those relying on assistive technologies or using mobile devices. Addressing these issues is essential for inclusive and universally usable design.</p>
+            </div>
+        </div>
+    </section>
 
-    <h3>Reflection</h3>
-    <p>The accessibility analysis highlights significant and legitimate concerns. The existing interface excludes many potential users, specifically those relying on assistive technologies or using mobile devices. Addressing these issues is essential for inclusive and universally usable design.</p>
-  </div>
+    <!-- Visual Redesign -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="content-section">
+                <h2>Visual Redesign</h2>
+                <h3>Visual Design Style Guide</h3>
+                <div class="image-container">
+                    <img src="interaction-design/visual_design_guide.jpg" alt="Visual Design Style Guide">
+                </div>
 
-  <div class="container">
-    <h2>Visual Redesign</h2>
-    <h3>Visual Design Style Guide</h3>
-    <img src="interaction-design/visual_design_guide.jpg" alt="Visual Design Style Guide">
+                <h3>Annotated Mockups &amp; Responsive Decisions</h3>
+                <h3>Mobile Mockup (iPhone)</h3>
+                <div class="image-container">
+                    <img src="interaction-design/phone.jpg" alt="Mobile Mockup">
+                </div>
+                <ul>
+                    <li>Components stacked vertically for intuitive scrolling.</li>
+                    <li>Slightly larger fonts and spacing optimized for small screens.</li>
+                </ul>
 
-    <h3>Annotated Mockups &amp; Responsive Decisions</h3>
-    <h3>Mobile Mockup (iPhone)</h3>
-    <div style="text-align: center;">
-      <img src="interaction-design/phone.jpg" alt="Mobile Mockup">
+                <h3>Tablet Mockup (iPad)</h3>
+                <div class="image-container">
+                    <img src="interaction-design/ipad.jpg" alt="Tablet Mockup">
+                </div>
+                <ul>
+                    <li>Similar stacking pattern to mobile with adjusted font size and spacing.</li>
+                    <li>Input fields rearrange vertically, ensuring accessibility and readability.</li>
+                    <li>Slight reduction in spacing between dropdown options to accommodate narrower widths.</li>
+                </ul>
+
+                <h3>Desktop Mockup</h3>
+                <div class="image-container">
+                    <img src="interaction-design/macbook.jpg" alt="Desktop Mockup">
+                </div>
+                <ul>
+                    <li>Layout splits into a two-column format:</li>
+                    <ul>
+                        <li>Left side: Logo and introductory content for context.</li>
+                        <li>Right side: Scheduling interactions (calendar and input fields).</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Design Improvements -->
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Key Design Improvements</h2>
+                <h3>Navigation</h3>
+                <ul>
+                    <li>Clearly defined "Create New Event" and "Edit Existing Event" buttons allow easy mode-switching without ambiguity. Selecting "Edit Existing Event" dynamically adjusts inputs accordingly.</li>
+                </ul>
+                <h3>Accessibility Improvements</h3>
+                <ul>
+                    <li>Date and time selections are accessible via keyboard navigation (Tab key).</li>
+                    <li>Clear labeling for event name and timezone inputs, meeting accessibility standards.</li>
+                </ul>
+                <h3>Responsive Layout Adjustments</h3>
+                <ul>
+                    <li>For smaller screens (tablet/mobile), elements stack logically in chronological order—mode selection, event naming, date selection, and time slots.</li>
+                    <li>Desktop layout leverages horizontal space, clearly separating introductory content from interaction components for improved readability.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Redesigned When2Meet -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="content-section">
+                <h2>Interactive Redesigned When2Meet</h2>
+                <p>To access the interactive redesigned webpage, click the button below:</p>
+                <a href="when2meet_v2.html" class="btn btn-primary">Visit Redesigned When2Meet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Projects Button -->
+    <div class="container text-center mb-5">
+        <a href="index.html#design-projects" class="btn btn-primary">Back to Projects</a>
     </div>
-    <ul>
-      <li>Components stacked vertically for intuitive scrolling.</li>
-      <li>Slightly larger fonts and spacing optimized for small screens.</li>
-    </ul>
 
-    <h3>Tablet Mockup (iPad)</h3>
-    <div style="text-align: center;">
-      <img src="interaction-design/ipad.jpg" alt="Tablet Mockup">
-    </div>
-    <ul>
-      <li>Similar stacking pattern to mobile with adjusted font size and spacing.</li>
-      <li>Input fields rearrange vertically, ensuring accessibility and readability.</li>
-      <li>Slight reduction in spacing between dropdown options to accommodate narrower widths.</li>
-    </ul>
 
-    <h3>Desktop Mockup</h3>
-    <div style="text-align: center;">
-      <img src="interaction-design/macbook.jpg" alt="Desktop Mockup">
-    </div>
-    <ul>
-      <li>Layout splits into a two-column format:</li>
-      <ul>
-        <li>Left side: Logo and introductory content for context.</li>
-        <li>Right side: Scheduling interactions (calendar and input fields).</li>
-      </ul>
-    </ul>
-  </div>
-
-  <div class="container">
-    <h2>Key Design Improvements</h2>
-    <h3>Navigation</h3>
-    <ul>
-      <li>Clearly defined “Create New Event” and “Edit Existing Event” buttons allow easy mode-switching without ambiguity. Selecting “Edit Existing Event” dynamically adjusts inputs accordingly.</li>
-    </ul>
-    <h3>Accessibility Improvements</h3>
-    <ul>
-      <li>Date and time selections are accessible via keyboard navigation (Tab key).</li>
-      <li>Clear labeling for event name and timezone inputs, meeting accessibility standards.</li>
-    </ul>
-    <h3>Responsive Layout Adjustments</h3>
-    <ul>
-      <li>For smaller screens (tablet/mobile), elements stack logically in chronological order—mode selection, event naming, date selection, and time slots.</li>
-      <li>Desktop layout leverages horizontal space, clearly separating introductory content from interaction components for improved readability.</li>
-    </ul>
-  </div>
-
-  <div class="container">
-    <h2>Interactive Redesigned When2Meet</h2>
-    <p>To access the interactive redesigned webpage, click the button below:</p>
-    <button onclick="location.href='when2meet_v2.html'">Visit Redesigned When2Meet</button>
-  </div>
-
-  <footer>
-    <p>&copy; 2024 Wirattawut (Max) Boonbandansook</p>
-  </footer>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

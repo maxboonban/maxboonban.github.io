@@ -4,212 +4,361 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Personas & Storyboarding - UX Study</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <style>
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --accent-color: #666666;
+        --highlight-color: #4285f4;
+        --light-gray: #f8f9fa;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        line-height: 1.5;
+        font-weight: 300;
+        font-size: 15px;
     }
-    header {
-      background: #007acc;
-      color: white;
-      padding: 1.5rem 0;
-      text-align: center;
+
+    .navbar {
+        padding: 1.5rem 0;
+        background-color: var(--bg-color);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
     }
-    nav {
-      background: #005f99;
-      padding: 0.5rem 0;
-      text-align: center;
+
+    .navbar-brand {
+        font-weight: 500;
+        font-size: 1rem;
+        color: var(--text-color);
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
+
+    .nav-link {
+        color: var(--text-color);
+        font-weight: 400;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
     }
-    nav ul li {
-      margin: 0 15px;
+
+    .nav-link.active, .nav-link:hover {
+        color: var(--highlight-color);
     }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+
+    .contact-link {
+        color: var(--highlight-color);
+        font-weight: 500;
     }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    h1, h2, h3 {
-      color: #007acc;
-    }
+    
     section {
-      margin-bottom: 2rem;
+        padding: 4rem 0;
     }
+    
+    .project-header {
+        padding: 7rem 0 2rem 0;
+        background-color: var(--bg-color);
+        margin-top: 3rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+    
+    h4 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .content-section {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .persona, .user-summary {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      background: #eef3f7;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
     }
-    .user-summary {
-      background: #fff;
+
+    .user-summary h4 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
     }
+
     .user-summary h4 img {
-      vertical-align: middle;
-      margin-right: 10px;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 1rem;
     }
+
     .storyboard-images {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
     }
+
     .storyboard-images img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
+
+    ul {
+        padding-left: 20px;
+        margin-bottom: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin: 1.5rem 0;
+    }
+
     footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1rem 0;
-      background: #f4f4f9;
-      color: #666;
+        background-color: var(--text-color);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 0.85rem;
+        margin-top: 3rem;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1.5rem 0;
+    }
+
+    .image-container img {
+        max-width: 90%;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+        
+        .content-section {
+            padding: 1.5rem;
+        }
     }
   </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Max</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#design-projects">Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#technical-projects">Technical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <header>
-    <h1>Personas & Storyboarding - UX Study</h1>
-  </header>
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <h1>Personas & Storyboarding - UX Study</h1>
+            <p>Understanding user needs and experiences through real-life observations</p>
+        </div>
+    </section>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-    </ul>
-  </nav>
-
-  <div class="container">
     <!-- UX Study Overview -->
-    <section id="overview">
-      <h2>UX Study Overview</h2>
-      <p>This study takes on a less object-centric user experience study but more on the flow of people inside the building. Specifically, this study examines how users navigate up Brown University's Computer Science Building (CIT) using different flow methods. In particular, the various entrances, staircases, and elevators—to reach the 3rd floor. The goal is to understand user behavior, preferences, and challenges so that we can improve the overall wayfinding and user experience in this environment. My motivation for conducting this study is that I, like many other Computer Science students at Brown University, interact with this building on a daily basis and personally found that getting around the builiding feels like navigating through a maze. </p>
-      <img src="interaction-design/cit_description.jpg" alt="CIT" style="width: 100%; max-width: 700px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>UX Study Overview</h2>
+                <p>This study takes on a less object-centric user experience study but more on the flow of people inside the building. Specifically, this study examines how users navigate up Brown University's Computer Science Building (CIT) using different flow methods. In particular, the various entrances, staircases, and elevators—to reach the 3rd floor. The goal is to understand user behavior, preferences, and challenges so that we can improve the overall wayfinding and user experience in this environment.</p>
+                <div class="image-container">
+                    <img src="interaction-design/cit_description.jpg" alt="CIT">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Interview Components -->
-    <section id="interviews">
-      <h2>Interview Components</h2>
-      <p>The study included contextual interviews with three individuals who regularly use the CIT building. The interview questions were designed to capture their natural behaviors, expectations, and the challenges they face while navigating the building.</p>
-      
-      <h3>Interview Questions</h3>
-      <ul>
-        <li>Can you describe the path you took to get to the 3rd floor and above of CIT today?</li>
-        <li>What factors influenced your decision to take that route?</li>
-        <li>How often do you take this route when moving around CIT?</li>
-        <li>If you had to describe the ideal way to reach the 3rd floor of CIT, what would it look like?</li>
-        <li>Have you ever tried using a different route than your usual one? If so, why?</li>
-        <li>For people unfamiliar with CIT, do you think it’s easy to figure out how to reach the 3rd floor? Why or why not?</li>
-      </ul>
-      
-      <h3>User Interview Summaries</h3>
-      <div class="user-summary">
-        <h4>
-          <img src="user1.png" alt="Dan Haramati"> Dan Haramati
-        </h4>
-        <ul>
-          <li>Took the back staircase from Waterman Street after dropping off items in his office (which is closer to Waterman street side).</li>
-          <li>Route choice depended on his starting location (main entrance vs. Waterman Street).</li>
-          <li>Uses this route about 80% of the time; alternatives are used when entering building after hours.</li>
-          <li>Believes there’s no ideal way. Elevator efficiency varies with class timing and elevator traffic.</li>
-          <li>Has tried another staircase route from the second floor but found it less convenient.</li>
-          <li>Notes that while the elevator is intuitive, the stairs can be confusing for newcomers.</li>
-        </ul>
-      </div>
-      
-      <div class="user-summary">
-        <h4>
-          <img src="user3.png" alt="Eileen Nolan"> Eileen Nolan
-        </h4>
-        <ul>
-          <li>Entered through the main door, took the stairs to the second floor, then the back evacuation stairs to reach the third floor.</li>
-          <li>Prefers the stairs in most situations but sometimes opts for elevator when going up with other friends (assumed friends would use elevator).</li>
-          <li>Uses the same route every time unless heading to a higher floor with a companion.</li>
-          <li>Suggests a single, central staircase would be ideal.</li>
-          <li>Has experimented with the other staircase when coming from Thayer Street.</li>
-          <li>Believes ease of navigation depends on whether one instinctively goes for the elevator or the stairs.</li>
-        </ul>
-      </div>
-      
-      <div class="user-summary">
-        <h4>
-          <img src="user2.png" alt="Aman Agrawal"> Aman Agrawal
-        </h4>
-        <ul>
-          <li>Always takes the elevator to reach the third floor.</li>
-          <li>Chooses the elevator as the stairs are perceived to be more complex.</li>
-          <li>Uses the elevator every time.</li>
-          <li>Ideal solution would be a central elevator located at the main entrance.</li>
-          <li>Sometimes uses stairs only to access the second floor.</li>
-          <li>Finds the lift easy to use, though the staircase layout is complicated.</li>
-        </ul>
-      </div>
+    <section class="bg-light">
+        <div class="container">
+            <div class="content-section">
+                <h2>Interview Components</h2>
+                <p>The study included contextual interviews with three individuals who regularly use the CIT building. The interview questions were designed to capture their natural behaviors, expectations, and the challenges they face while navigating the building.</p>
+                
+                <h3>Interview Questions</h3>
+                <ul>
+                    <li>Can you describe the path you took to get to the 3rd floor and above of CIT today?</li>
+                    <li>What factors influenced your decision to take that route?</li>
+                    <li>How often do you take this route when moving around CIT?</li>
+                    <li>If you had to describe the ideal way to reach the 3rd floor of CIT, what would it look like?</li>
+                    <li>Have you ever tried using a different route than your usual one? If so, why?</li>
+                    <li>For people unfamiliar with CIT, do you think it's easy to figure out how to reach the 3rd floor? Why or why not?</li>
+                </ul>
+                
+                <h3>User Interview Summaries</h3>
+                <div class="user-summary">
+                    <h4>
+                        <img src="user1.png" alt="Dan Haramati"> Dan Haramati
+                    </h4>
+                    <ul>
+                        <li>Took the back staircase from Waterman Street after dropping off items in his office (which is closer to Waterman street side).</li>
+                        <li>Route choice depended on his starting location (main entrance vs. Waterman Street).</li>
+                        <li>Uses this route about 80% of the time; alternatives are used when entering building after hours.</li>
+                        <li>Believes there's no ideal way. Elevator efficiency varies with class timing and elevator traffic.</li>
+                        <li>Has tried another staircase route from the second floor but found it less convenient.</li>
+                        <li>Notes that while the elevator is intuitive, the stairs can be confusing for newcomers.</li>
+                    </ul>
+                </div>
+                
+                <div class="user-summary">
+                    <h4>
+                        <img src="user3.png" alt="Eileen Nolan"> Eileen Nolan
+                    </h4>
+                    <ul>
+                        <li>Entered through the main door, took the stairs to the second floor, then the back evacuation stairs to reach the third floor.</li>
+                        <li>Prefers the stairs in most situations but sometimes opts for elevator when going up with other friends (assumed friends would use elevator).</li>
+                        <li>Uses the same route every time unless heading to a higher floor with a companion.</li>
+                        <li>Suggests a single, central staircase would be ideal.</li>
+                        <li>Has experimented with the other staircase when coming from Thayer Street.</li>
+                        <li>Believes ease of navigation depends on whether one instinctively goes for the elevator or the stairs.</li>
+                    </ul>
+                </div>
+                
+                <div class="user-summary">
+                    <h4>
+                        <img src="user2.png" alt="Aman Agrawal"> Aman Agrawal
+                    </h4>
+                    <ul>
+                        <li>Always takes the elevator to reach the third floor.</li>
+                        <li>Chooses the elevator as the stairs are perceived to be more complex.</li>
+                        <li>Uses the elevator every time.</li>
+                        <li>Ideal solution would be a central elevator located at the main entrance.</li>
+                        <li>Sometimes uses stairs only to access the second floor.</li>
+                        <li>Finds the lift easy to use, though the staircase layout is complicated.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Persona Development -->
-    <section id="personas">
-      <h2>Persona Development</h2>
-      <p>Based on these interviews and observations, I synthesized the feedback into empathy maps to capture what users <strong>think, feel, say,</strong> and <strong>do</strong> when navigating CIT. This process revealed two key archetypes:</p>
-      
-      <div class="persona">
-        <h3>Athletic Alice</h3>
-        <p><strong>Description:</strong> A physically active individual who enjoys running and prefers a predictable routine. She consistently opts for the stairs to get extra exercise and avoid delays. This persona represents the user of my chosen interface as someone who knows the exact path he/she will take everyday and doesn't suffer the dilemma of taking the elevator or the stairs and is able to therefore bypass the challenges of navigating through this building.</p>
-        <img src="personas_alice.jpg" alt="Athletic Alice" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-
-      </div>
-      
-      <div class="persona">
-        <h3>Undecisive Bob</h3>
-        <p><strong>Description:</strong> Bob struggles to decide between taking the stairs or the elevator. His indecision and hesitation often lead to delays, making him late. This persona represents the user of my chosen interface as someone who suffers from the dilemma of deciding between taking the elevator or the stairs.</p>
-        <img src="personas_bob.jpg" alt="Back-and-Forth Bob" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-
-      </div>
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Persona Development</h2>
+                <p>Based on these interviews and observations, I synthesized the feedback into empathy maps to capture what users <strong>think, feel, say,</strong> and <strong>do</strong> when navigating CIT. This process revealed two key archetypes:</p>
+                
+                <div class="persona">
+                    <h3>Athletic Alice</h3>
+                    <p><strong>Description:</strong> A physically active individual who enjoys running and prefers a predictable routine. She consistently opts for the stairs to get extra exercise and avoid delays. This persona represents the user of my chosen interface as someone who knows the exact path he/she will take everyday and doesn't suffer the dilemma of taking the elevator or the stairs and is able to therefore bypass the challenges of navigating through this building.</p>
+                    <div class="image-container">
+                        <img src="personas_alice.jpg" alt="Athletic Alice">
+                    </div>
+                </div>
+                
+                <div class="persona">
+                    <h3>Undecisive Bob</h3>
+                    <p><strong>Description:</strong> Bob struggles to decide between taking the stairs or the elevator. His indecision and hesitation often lead to delays, making him late. This persona represents the user of my chosen interface as someone who suffers from the dilemma of deciding between taking the elevator or the stairs.</p>
+                    <div class="image-container">
+                        <img src="personas_bob.jpg" alt="Back-and-Forth Bob">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Storyboard for Undecisive Bob -->
-    <section id="storyboard">
-      <h2>Storyboard: Back-and-Forth Bob</h2>
-      <p>This storyboard captures Bob’s entire user journey as he navigates CIT, illustrating his moments of indecision and the resulting delays.</p>
-      <div class="storyboard-images">
-        <img src="storyboard_1_captions.png" alt="Storyboard 1 for Undecisive Bob">
-        <img src="storyboard_2_captions.png" alt="Storyboard 2 for Undecisive Bob">
-      </div>
+    <section class="bg-light">
+        <div class="container">
+            <div class="content-section">
+                <h2>Storyboard: Back-and-Forth Bob</h2>
+                <p>This storyboard captures Bob's entire user journey as he navigates CIT, illustrating his moments of indecision and the resulting delays.</p>
+                <div class="storyboard-images">
+                    <img src="storyboard_1_captions.png" alt="Storyboard 1 for Undecisive Bob">
+                    <img src="storyboard_2_captions.png" alt="Storyboard 2 for Undecisive Bob">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Explanation of Synthesis -->
-    <section id="synthesis">
-      <h2>From Interviews to Insights</h2>
-      <p>The interviews and observations revealed diverse behaviors and pain points for each users as they interact with CIT on a daily basis. It is also quite surprising to me how one can have such a different experience interacting with the same "object". By analyzing recurring themes—such as the desire for efficiency, frustrations with delays, and the conflict between convenience and physical effort—I crafted empathy maps that capture what users think, feel, say, and do. These insights were distilled into the personas of Athletic Alice and Undecisive Bob, which informed the design of the storyboard for Bob. This process illustrates how I conduct my user experience studies to help drive user-centered design improvements in everyday real-world scenarios.</p>
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>From Interviews to Insights</h2>
+                <p>The interviews and observations revealed diverse behaviors and pain points for each users as they interact with CIT on a daily basis. It is also quite surprising to me how one can have such a different experience interacting with the same "object". By analyzing recurring themes—such as the desire for efficiency, frustrations with delays, and the conflict between convenience and physical effort—I crafted empathy maps that capture what users think, feel, say, and do. These insights were distilled into the personas of Athletic Alice and Undecisive Bob, which informed the design of the storyboard for Bob. This process illustrates how I conduct my user experience studies to help drive user-centered design improvements in everyday real-world scenarios.</p>
+            </div>
+        </div>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; Wirattawut (Max) Boonbandansook</p>
-  </footer>
+    <!-- Back to Projects Button -->
+    <div class="container text-center mb-5">
+        <a href="index.html#design-projects" class="btn btn-primary">Back to Projects</a>
+    </div>
 
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

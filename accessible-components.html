@@ -4,278 +4,419 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessible Components - Search Bar Redesign</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #666666;
+            --highlight-color: #4285f4;
+            --light-gray: #f8f9fa;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.5;
+            font-weight: 300;
+            font-size: 15px;
         }
-
-        header {
-            background: #007acc;
-            color: white;
+        
+        .navbar {
             padding: 1.5rem 0;
-            text-align: center;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-
-        nav {
-            background: #005f99;
-            padding: 0.5rem 0;
-            text-align: center;
+        
+        .navbar-brand {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-color);
         }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
+        
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
         }
-
-        nav ul li {
-            margin: 0 15px;
+        
+        .nav-link.active, .nav-link:hover {
+            color: var(--highlight-color);
         }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        
+        .contact-link {
+            color: var(--highlight-color);
+            font-weight: 500;
         }
-
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        section {
+            padding: 4rem 0;
         }
-
-        h1, h2 {
-            color: #007acc;
+        
+        .project-header {
+            padding: 7rem 0 2rem 0;
+            background-color: var(--bg-color);
+            margin-top: 3rem;
         }
-
-        a {
-            color: #007acc;
-            text-decoration: none;
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 1rem;
         }
-
-        a:hover {
-            text-decoration: underline;
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
         }
-
+        
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
         }
-
+        
         th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 12px;
             text-align: left;
         }
-
+        
         th {
-            background-color: #007acc;
-            color: white;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            font-weight: 500;
         }
-
+        
+        .btn {
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--text-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin: 1.5rem 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
         footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            margin-top: 2rem;
-            padding: 1rem 0;
-            background: #f4f4f9;
-            color: #666;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+        
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+        
+        .image-container img {
+            max-width: 90%;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Accessible Components: Search Bar Redesign</h1>
-        <p>Improving usability and accessibility in search interactions.</p>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Max</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#design-projects">Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#technical-projects">Technical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <h1>Accessible Components: Search Bar Redesign</h1>
+            <p>Improving usability and accessibility in search interactions.</p>
+        </div>
+    </section>
+
     <!-- Project Overview -->
-    <div class="container">
-        <h2>Project Overview</h2>
-        <p>The search bar is a critical UI component that allows users to efficiently find content. This project examines how different platforms implement search bars and redesigns the component for improved accessibility and efficiency. 
-            For this case study, I analyzed three search bar implementations—Microsoft 365 Copilot, Netflix, and the U.S. Department of State—to understand their strengths and weaknesses. Based on these insights, I then redesigned the search bar to improve learnability, efficiency, and accessibility </p>
-    </div>
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>The search bar is a critical UI component that allows users to efficiently find content. This project examines how different platforms implement search bars and redesigns the component for improved accessibility and efficiency.</p>
+                <p>For this case study, I analyzed three search bar implementations—Microsoft 365 Copilot, Netflix, and the U.S. Department of State—to understand their strengths and weaknesses. Based on these insights, I then redesigned the search bar to improve learnability, efficiency, and accessibility.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Input Analysis -->
-    <div class="container">
-        <h2>Part 1: Input Analysis</h2>
-        <p>We examined how three platforms—Microsoft 365 Copilot, Netflix, and the U.S. Department of State—handle search input via mouse, keyboard, and touch.</p>
-        
-        <table>
-            <tr>
-                <th>Platform</th>
-                <th>Mouse/Touchpad</th>
-                <th>Keyboard</th>
-            </tr>
-            <tr>
-                <td><strong>Microsoft 365 Copilot</strong></td>
-                <td>Search box is centered in the middle of page making it clearly visible, blinking cursor on click indicates it is interactable, back button available for return to original state.</td>
-                <td>Tab navigation for forward pass and Shift-tab for backward pass. Drop-down is immediately activated once the tab reaches the search box, removing one additional Enter button from the process. </td>
-            </tr>
-            <tr>
-                <td><strong>Netflix</strong></td>
-                <td>Hidden search icon expands when clicked, disappears when clicking elsewhere.</td>
-                <td>Tab navigation cycles through UI, real-time search updates without pressing Enter.</td>
-            </tr>
-            <tr>
-                <td><strong>U.S. Department of State</strong></td>
-                <td>Hidden search icon expands into a large search box, requires an explicit close action.</td>
-                <td>Tab navigation skips the search icon entirely.</td>
-            </tr>
-        </table>
-    </div>
+    <section class="bg-light">
+        <div class="container">
+            <div class="content-section">
+                <h2>Part 1: Input Analysis</h2>
+                <p>We examined how three platforms—Microsoft 365 Copilot, Netflix, and the U.S. Department of State—handle search input via mouse, keyboard, and touch.</p>
+                
+                <table>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Mouse/Touchpad</th>
+                        <th>Keyboard</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft 365 Copilot</strong></td>
+                        <td>Search box is centered in the middle of page making it clearly visible, blinking cursor on click indicates it is interactable, back button available for return to original state.</td>
+                        <td>Tab navigation for forward pass and Shift-tab for backward pass. Drop-down is immediately activated once the tab reaches the search box, removing one additional Enter button from the process.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netflix</strong></td>
+                        <td>Hidden search icon expands when clicked, disappears when clicking elsewhere.</td>
+                        <td>Tab navigation cycles through UI, real-time search updates without pressing Enter.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U.S. Department of State</strong></td>
+                        <td>Hidden search icon expands into a large search box, requires an explicit close action.</td>
+                        <td>Tab navigation skips the search icon entirely.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
 
     <!-- Output Feedback -->
-    <div class="container">
-        <h2>Part 2: Output Feedback</h2>
-        <p>Examining how platforms visually communicate the state of the search box.</p>
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Part 2: Output Feedback</h2>
+                <p>Examining how platforms visually communicate the state of the search box.</p>
 
-        <table>
-            <tr>
-                <th>Platform</th>
-                <th>Mouse/Trackpad</th>
-                <th>Keyboard</th>
-            </tr>
-            <tr>
-                <td><strong>Microsoft 365 Copilot</strong></td>
-                <td>- Hover states: present when mouse hovers over the search box indicated by a darker text font and 3D effects (lower-emphasis surface overlay) on the search box.
-                    - Pressed State: When clicked, a blinking cursor appears, reinforcing that users can type. The search box expands with drop-down menu and back button appears for easy return.
-                </td>
-                <td>When the Tab key is pressed, the search box gets outlined and gains focus. Dropdown Suggestions: Typing in the search box automatically shows a list of suggested searches.</td>
-            </tr>
-            <tr>
-                <td><strong>Netflix</strong></td>
-                <td>- Hover State: No hover effect on the search icon, making it less discoverable. - Focused State: Clicking on the icon replaces it with the search box, making the transition clear.</td>
-                <td>- Tab Focus: A box outline appears around the search icon, indicating focus. - Live Search Updates: As users type, Netflix dynamically refreshes results without requiring an Enter key press (efficient approach). </td>
-            </tr>
-            <tr>
-                <td><strong>U.S. Department of State</strong></td>
-                <td>- Hover State: The search icon darkens slightly, making it more noticeable.  - Focused State: Clicking the icon expands a disproportionately large search box with oversized text.  - Pressed State: Users must manually click the large “X” button to close the search box.</td>
-                <td> Tab Focus: No keyboard focus indicator; pressing Tab skips over the search box entirely. </td>
-            </tr>
-        </table>
-    </div>
+                <table>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Mouse/Trackpad</th>
+                        <th>Keyboard</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft 365 Copilot</strong></td>
+                        <td>- Hover states: present when mouse hovers over the search box indicated by a darker text font and 3D effects (lower-emphasis surface overlay) on the search box.
+                            - Pressed State: When clicked, a blinking cursor appears, reinforcing that users can type. The search box expands with drop-down menu and back button appears for easy return.
+                        </td>
+                        <td>When the Tab key is pressed, the search box gets outlined and gains focus. Dropdown Suggestions: Typing in the search box automatically shows a list of suggested searches.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netflix</strong></td>
+                        <td>- Hover State: No hover effect on the search icon, making it less discoverable. - Focused State: Clicking on the icon replaces it with the search box, making the transition clear.</td>
+                        <td>- Tab Focus: A box outline appears around the search icon, indicating focus. - Live Search Updates: As users type, Netflix dynamically refreshes results without requiring an Enter key press (efficient approach).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>U.S. Department of State</strong></td>
+                        <td>- Hover State: The search icon darkens slightly, making it more noticeable.  - Focused State: Clicking the icon expands a disproportionately large search box with oversized text.  - Pressed State: Users must manually click the large "X" button to close the search box.</td>
+                        <td>Tab Focus: No keyboard focus indicator; pressing Tab skips over the search box entirely.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
 
     <!-- State Model & Redesign -->
-    <div class="container">
-        <h2>Part 3: State Model & Component Redesign</h2>
-        <p>Based on these insights, we redesigned the search bar to enhance accessibility. I will be focusing on the redesign of the search bar from the US Department of State website. 
-            In order to do so, we need to analyze its component from a state model perspective. </p>
-            <h3>Current State Model</h3>
-            <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-                <img src="original_state_mouse.png" alt="Original State - Mouse Interaction" 
-                     style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            </div>
-            <p>Search Box Keyboard State Model for the US Department of State website does not exist since pressing tab completely skips over the component.</p>
-        <ul>
-            <li>Original website displays a small search icon and when clicked pops down a disproportionately large search bar across the entire page underneath. </li>
-            <li>There is some temporal mismatch/flickering between the initial state and the active/clicked state.</li>
-        </ul>
-
-        <h3>Revised State Model</h3>
-        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-            <img src="redesign_mouse_state.png" alt="Redesign Mouse State - Mouse Interaction" 
-                    style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-            <img src="redesign_keyboard_state.png" alt="Redesign Keyboard State - Keyboard Interaction" 
-                    style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-            <img src="figma_state_1.png" alt="Redesign Figma 1" 
-                    style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
-            <img src="figma_state_2.png" alt="Redesign Figma 2" 
-                    style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
-        <ul>
-            <li>I will improve this by converting the search icon into a full search bar and eliminating the temporal mismatch/flickering.</li>
-            <li>Default State: Search box is always visible.</li>
-            <li>Hovered State: Subtle shadow effect.</li>
-            <li>Active State: Cursor blinks, suggested results appear.</li>
-            <li>Exit State: Clicking outside collapses the search box.</li>
-        </ul>
-        <!-- Table for Redesign Analysis -->
-        <h3>Impact on Key Usability Factors</h3>
-        <table>
-            <tr>
-                <th>Learnability</th>
-                <th>Memorability</th>
-                <th>Efficiency</th>
-                <th>Accessibility</th>
-            </tr>
-            <tr>
-                <td>Users can immediately see that the search bar is available without needing to hover or click on an icon.</td>
-                <td>The search box is always present, reducing the need for users to recall hidden UI elements.</td>
-                <td>Eliminates one more step users need to press in order to get to the search box or find a close button. Additionally, clicking anywhere outside the bar exits the mode.</td>
-                <td>Keyboard users can now navigate to the search bar using the Tab key. Focus order is incorporated.</td>
-            </tr>
-        </table>
-    </div>
-        <!-- Reflection Section -->
+    <section class="bg-light">
         <div class="container">
-            <h2>Part 4: Reflection</h2>
-    
-            <h3>Where did the redesigned search bar do well in terms of usability?</h3>
-            <ul>
-                <li>Ease of learnability and memorability: Search bar is made as always visible (eliminate additional step of clicking the search icon to display search bar).</li>
-                <li>Display search suggestion: search bar once clicked displays FAQs helping users find what they need faster.</li>
-            </ul>
-    
-            <h3>Where did the redesigned search bar do well in terms of accessibility?</h3>
-            <ul>
-                <li>Use of high contrast colors (dark blue and light gray search bar) helps people with color blindness visually spot the search bar.</li>
-            </ul>
-    
-            <h3>Are there any accessibility considerations that were not addressed in the initial design that have been addressed in this redesign?</h3>
-            <ul>
-                <li>Incorporate focus order for keyboard user: add search bar as part of the logical keyboard tab sequence.</li>
-                <li>Incorporation of using voice to search helps improve accessibility to people with disability.</li>
-            </ul>
-    
-            <h3>How does this redesign help solve the “mismatch” as stated by Kat Holmes’ Inclusive Design?</h3>
-            <ul>
-                <li>From Kat Holmes’ definition of mismatch, she states that a mismatch is a disconnect between what a user can do and what the system design offers, where oftentimes a user is challenged by how the design doesn’t accommodate the various needs of different people.</li>
-                <li>Eliminating hidden UI: in the original design, the search bar was hidden after a search icon. In the new design, the search bar is no longer hidden.</li>
-                <li>Allowing multiple input methods: the original design only allowed users to click search via a mouse. In the new design, we have expanded it to accommodate mouse, keyboard, and voice.</li>
-            </ul>
-    
-            <h3>Justification of component design on users with impairments</h3>
-            <h4>Examples of how accessibility/inaccessibility of inputs or outputs could also impact users with impairments either positively or negatively, respectively:</h4>
-            <ul>
-                <li>Microsoft 365: Designed keyboard shortcut for Microsoft 365 is still not well designed for users with blindness. Even though pressing tab once will allow them to get to the search bar, there is no sense of which component they are actually selecting. If a blind user accidentally double pressed on tab, then they will have skipped the search bar without even knowing it.</li>
-                <li>Netflix: The choice of color contrast and the thin search icon makes it very difficult for people with long-sightedness condition to recognize the icon when they are not wearing glasses.</li>
-            </ul>
-    
-            <h3>Justification on prioritized mode of interaction (mouse, keyboard)</h3>
-            <ul>
-                <li>Mouse users are the most prioritized group. This is because point-and-click mode via mouse is the most intuitive and common form of design interactions. This will impact the experience for users who prefer to use keyboard or screen reader support as it is not so efficient for them to use.</li>
-            </ul>
+            <div class="content-section">
+                <h2>Part 3: State Model & Component Redesign</h2>
+                <p>Based on these insights, we redesigned the search bar to enhance accessibility. I will be focusing on the redesign of the search bar from the US Department of State website. 
+                    In order to do so, we need to analyze its component from a state model perspective.</p>
+                
+                <h3>Current State Model</h3>
+                <div class="image-container">
+                    <img src="original_state_mouse.png" alt="Original State - Mouse Interaction">
+                </div>
+                <p>Search Box Keyboard State Model for the US Department of State website does not exist since pressing tab completely skips over the component.</p>
+                <ul>
+                    <li>Original website displays a small search icon and when clicked pops down a disproportionately large search bar across the entire page underneath.</li>
+                    <li>There is some temporal mismatch/flickering between the initial state and the active/clicked state.</li>
+                </ul>
+
+                <h3>Revised State Model</h3>
+                <div class="image-container">
+                    <img src="redesign_mouse_state.png" alt="Redesign Mouse State - Mouse Interaction">
+                </div>
+                <div class="image-container">
+                    <img src="redesign_keyboard_state.png" alt="Redesign Keyboard State - Keyboard Interaction">
+                </div>
+                <div class="image-container">
+                    <img src="figma_state_1.png" alt="Redesign Figma 1">
+                </div>
+                <div class="image-container">
+                    <img src="figma_state_2.png" alt="Redesign Figma 2">
+                </div>
+                <ul>
+                    <li>I will improve this by converting the search icon into a full search bar and eliminating the temporal mismatch/flickering.</li>
+                    <li>Default State: Search box is always visible.</li>
+                    <li>Hovered State: Subtle shadow effect.</li>
+                    <li>Active State: Cursor blinks, suggested results appear.</li>
+                    <li>Exit State: Clicking outside collapses the search box.</li>
+                </ul>
+                
+                <!-- Table for Redesign Analysis -->
+                <h3>Impact on Key Usability Factors</h3>
+                <table>
+                    <tr>
+                        <th>Learnability</th>
+                        <th>Memorability</th>
+                        <th>Efficiency</th>
+                        <th>Accessibility</th>
+                    </tr>
+                    <tr>
+                        <td>Users can immediately see that the search bar is available without needing to hover or click on an icon.</td>
+                        <td>The search box is always present, reducing the need for users to recall hidden UI elements.</td>
+                        <td>Eliminates one more step users need to press in order to get to the search box or find a close button. Additionally, clicking anywhere outside the bar exits the mode.</td>
+                        <td>Keyboard users can now navigate to the search bar using the Tab key. Focus order is incorporated.</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Wirattawut (Max) Boonbandansook</p>
-    </footer>
+    <!-- Reflection Section -->
+    <section>
+        <div class="container">
+            <div class="content-section">
+                <h2>Part 4: Reflection</h2>
+        
+                <h3>Where did the redesigned search bar do well in terms of usability?</h3>
+                <ul>
+                    <li>Ease of learnability and memorability: Search bar is made as always visible (eliminate additional step of clicking the search icon to display search bar).</li>
+                    <li>Display search suggestion: search bar once clicked displays FAQs helping users find what they need faster.</li>
+                </ul>
+        
+                <h3>Where did the redesigned search bar do well in terms of accessibility?</h3>
+                <ul>
+                    <li>Use of high contrast colors (dark blue and light gray search bar) helps people with color blindness visually spot the search bar.</li>
+                </ul>
+        
+                <h3>Are there any accessibility considerations that were not addressed in the initial design that have been addressed in this redesign?</h3>
+                <ul>
+                    <li>Incorporate focus order for keyboard user: add search bar as part of the logical keyboard tab sequence.</li>
+                    <li>Incorporation of using voice to search helps improve accessibility to people with disability.</li>
+                </ul>
+        
+                <h3>How does this redesign help solve the "mismatch" as stated by Kat Holmes' Inclusive Design?</h3>
+                <ul>
+                    <li>From Kat Holmes' definition of mismatch, she states that a mismatch is a disconnect between what a user can do and what the system design offers, where oftentimes a user is challenged by how the design doesn't accommodate the various needs of different people.</li>
+                    <li>Eliminating hidden UI: in the original design, the search bar was hidden after a search icon. In the new design, the search bar is no longer hidden.</li>
+                    <li>Allowing multiple input methods: the original design only allowed users to click search via a mouse. In the new design, we have expanded it to accommodate mouse, keyboard, and voice.</li>
+                </ul>
+        
+                <h3>Justification of component design on users with impairments</h3>
+                <h4>Examples of how accessibility/inaccessibility of inputs or outputs could also impact users with impairments either positively or negatively, respectively:</h4>
+                <ul>
+                    <li>Microsoft 365: Designed keyboard shortcut for Microsoft 365 is still not well designed for users with blindness. Even though pressing tab once will allow them to get to the search bar, there is no sense of which component they are actually selecting. If a blind user accidentally double pressed on tab, then they will have skipped the search bar without even knowing it.</li>
+                    <li>Netflix: The choice of color contrast and the thin search icon makes it very difficult for people with long-sightedness condition to recognize the icon when they are not wearing glasses.</li>
+                </ul>
+        
+                <h3>Justification on prioritized mode of interaction (mouse, keyboard)</h3>
+                <ul>
+                    <li>Mouse users are the most prioritized group. This is because point-and-click mode via mouse is the most intuitive and common form of design interactions. This will impact the experience for users who prefer to use keyboard or screen reader support as it is not so efficient for them to use.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <!-- Back to Projects Button -->
+    <div class="container text-center mb-5">
+        <a href="index.html#design-projects" class="btn btn-primary">Back to Projects</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
